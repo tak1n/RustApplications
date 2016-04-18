@@ -1,7 +1,7 @@
 use std::thread;
 
 #[no_mangle]
-pub extern fn process() {
+pub extern fn process() -> i64 {
     let handles: Vec<_> = (0..10).map(|_| {
         thread::spawn(|| {
             let mut x = 0;
@@ -14,4 +14,6 @@ pub extern fn process() {
     for h in handles {
         h.join().ok().expect("Could not join a thread!");
     }
+
+    return 65;
 }
