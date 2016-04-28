@@ -11,11 +11,15 @@ fn main() {
 
   let x = 6;
 
+  // this
   let y = if x == 5 {
     10
   } else {
     15
   }; // y: i32
+
+  // is the same as
+  // let y = if x == 5 { 10 } else { 15 }; // y: i32
 
   println!("{}", y);
 }
